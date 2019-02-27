@@ -1,4 +1,4 @@
-require_relative 'seating_chart/component'
+require_relative 'geotix_seating_chart/component'
 
 module Voom
   module Presenters
@@ -15,7 +15,7 @@ module Voom
                                    render:,
                                    components:,
                                    index:)
-            view_dir = File.join(__dir__, 'seating_chart')
+            view_dir = File.join(__dir__, 'geotix_seating_chart')
             render.call :erb, :geotix_seating_chart, views: view_dir,
                         locals: {comp: comp,
                                  components: components,
