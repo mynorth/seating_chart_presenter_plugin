@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    foo_presenter_plugin (0.0.1)
+    seating_chart_presenter_plugin (0.0.1)
 
 GEM
   remote: https://rubygems.org/
@@ -13,8 +13,8 @@ PLATFORMS
 
 DEPENDENCIES
   bundler (~> 1.16)
-  foo_presenter_plugin!
   rake (~> 10.0)
+  seating_chart_presenter_plugin!
 
 BUNDLED WITH
-   1.16.1
+   1.16.2

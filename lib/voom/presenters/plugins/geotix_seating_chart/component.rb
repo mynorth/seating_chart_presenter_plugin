@@ -5,10 +5,11 @@ module Voom
     module Plugins
       module GeotixSeatingChart
         class Component < DSL::Components::EventBase
-          attr_reader :chart_id
-          def initialize(chart_id, **attribs_, &block)
+          attr_reader :chart_id, :event_id
+          def initialize(chart_id, **attribs, &block)
             @chart_id = chart_id
-            super(type: :geotix_seating_chart, **attribs_, &block)
+            @event_id = attribs.delete(:event_id){ nil }
+            super(type: :geotix_seating_chart, **attribs, &block)
             expand!
           end
         end

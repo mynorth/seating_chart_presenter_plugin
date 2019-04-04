@@ -1,1 +1,1 @@
-<iframe style="width: 100%; height: 800px;" src="/api/seating_charts/<%= comp.chart_id %>/editor"></iframe>
+<iframe style="width: 100%; height: 800px;" src="/api/seating_charts/<%= comp.chart_id %>/editor<% if comp.event_id %>?for_event=<%= comp.event_id %><% end %>"></iframe>
