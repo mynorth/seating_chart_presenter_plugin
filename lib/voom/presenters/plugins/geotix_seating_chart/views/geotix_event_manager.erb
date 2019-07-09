@@ -1,0 +1,10 @@
+<div id="event-manager"></div>
+<script src="https://cdn.seatsio.net/chart.js"></script>
+<script>
+  new seatsio.EventManager({
+    divId: 'event-manager',
+    secretKey: '<%= comp.secret_key %>',
+    event: '<%= comp.event_id %>',
+    mode: '<%= comp.mode %> %>'
+  }).render();
+</script>

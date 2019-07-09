@@ -1,0 +1,9 @@
+<div id="chart"></div>
+<script src="https://cdn.seatsio.net/chart.js"></script>
+<script>
+  new seatsio.SeatingChart({
+    divId: 'chart',
+    publicKey: '<%= comp.public_key %>',
+    event: '<%= comp.event_id  %>'
+  }).render();
+</script>
