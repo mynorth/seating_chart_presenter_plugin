@@ -1,8 +1,8 @@
-<div id="chartDesigner"></div>
+<div id="chart-designer-<%= comp.id %>" style="height: 100%"></div>
 <script src="https://cdn.seatsio.net/chart.js"></script>
 <script>
   new seatsio.SeatingChartDesigner({
-    divId: 'chartDesigner',
+    divId: 'chart-designer-<%= comp.id %>',
     designerKey: '<%= comp.designer_key %>',
     chartKey: '<%= comp.chart_key %>'
   }).render();
