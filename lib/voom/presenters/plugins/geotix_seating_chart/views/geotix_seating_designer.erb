@@ -4,6 +4,10 @@
   new seatsio.SeatingChartDesigner({
     divId: 'chart-designer-<%= comp.id %>',
     designerKey: '<%= comp.designer_key %>',
-    chartKey: '<%= comp.chart_key %>'
+    chartKey: '<%= comp.chart_key %>',
+    features: {
+      disabled: <%= comp.disabled %>,
+      readOnly: <%= comp.readonly %>
+    }
   }).render();
 </script>
