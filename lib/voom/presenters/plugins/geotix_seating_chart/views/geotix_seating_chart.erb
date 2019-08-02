@@ -4,6 +4,11 @@
   new seatsio.SeatingChart({
     divId: 'chart',
     publicKey: '<%= comp.public_key %>',
-    event: '<%= comp.event_id  %>'
+    event: '<%= comp.event_id  %>',
+    pricing: <%= comp.pricing.to_json %>,
+    priceFormatter: function(price) {
+      return '<%= comp.price_format %>' + price;
+    },
+    priceLevelsTooltipMessage: "<%= comp.price_level_tooltip %>"
   }).render();
 </script>
