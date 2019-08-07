@@ -1,14 +1,16 @@
 <div id="chart" style="height: 100%"></div>
 <script src="https://cdn.seatsio.net/chart.js"></script>
 <script>
-  new seatsio.SeatingChart({
+  var chart = new seatsio.SeatingChart({
     divId: 'chart',
     publicKey: '<%= comp.public_key %>',
     event: '<%= comp.event_id  %>',
     pricing: <%= comp.pricing.to_json %>,
+    availableCategories: <%= comp.available_categories %>,
     priceFormatter: function(price) {
       return '<%= comp.price_format %>' + price;
     },
     priceLevelsTooltipMessage: "<%= comp.price_level_tooltip %>"
   }).render();
+
 </script>
