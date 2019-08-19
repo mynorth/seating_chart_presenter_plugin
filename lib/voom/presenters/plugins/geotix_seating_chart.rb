@@ -6,6 +6,12 @@ module Voom
   module Presenters
     module Plugins
       module GeotixSeatingChart
+
+        class Settings
+          extend Dry::Configurable
+          setting :chart_js_url, 'https://cdn-staging.seatsio.net/chart.js'
+        end
+
         module DSLComponents
           def geotix_seating_chart(subaccount_id, chart_key, public_key, **attributes, &block)
             self << GeotixSeatingChart::Components::Chart.new(subaccount_id,
