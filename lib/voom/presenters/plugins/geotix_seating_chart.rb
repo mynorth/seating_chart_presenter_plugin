@@ -13,9 +13,8 @@ module Voom
         end
 
         module DSLComponents
-          def geotix_seating_chart(subaccount_id, chart_key, public_key, **attributes, &block)
-            self << GeotixSeatingChart::Components::Chart.new(subaccount_id,
-                                                              chart_key,
+          def geotix_seating_chart(chart_key, public_key, **attributes, &block)
+            self << GeotixSeatingChart::Components::Chart.new(chart_key,
                                                               public_key,
                                                               parent: self, **attributes, &block)
           end

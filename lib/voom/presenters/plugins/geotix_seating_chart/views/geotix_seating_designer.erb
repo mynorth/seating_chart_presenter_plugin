@@ -9,6 +9,11 @@
     features: {
       disabled: <%= comp.disabled %>,
       readOnly: <%= comp.readonly %>
+    },
+    <% if comp.publish_button_id %>
+    onChartUpdated: function(chartKey) {
+      document.querySelector('#<%= comp.publish_button_id %>').classList.remove('v-hidden');
     }
+    <% end %>
   }).render();
 </script>
