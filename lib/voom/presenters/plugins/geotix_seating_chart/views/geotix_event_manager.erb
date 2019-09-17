@@ -1,10 +1,10 @@
-<div id="event-manager" style="height: 100%"></div>
+<div id="event-manager-<%= comp.mode %>" style="height: 100%"></div>
 <script src="<%= comp.chart_js_url %>"></script>
 <script>
-  new seatsio.EventManager({
-    divId: 'event-manager',
+  var eventManager = new seatsio.EventManager({
+    divId: 'event-manager-<%= comp.mode %>',
     secretKey: '<%= comp.secret_key %>',
     event: '<%= comp.event_id %>',
-    mode: '<%= comp.mode %> %>'
+    mode: '<%= comp.mode %>'
   }).render();
 </script>
