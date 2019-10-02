@@ -7,7 +7,7 @@ module Voom
         module Components
           class Designer < DSL::Components::EventBase
             attr_reader :subaccount_id, :designer_key, :chart_key, :disabled, :readonly,
-                        :language, :chart_js_url, :publish_button_id
+                        :language, :chart_js_url, :open_latest_drawing, :publish_button_id
             def initialize(subaccount_id, designer_key, **attribs, &block)
               @subaccount_id = subaccount_id
               @designer_key = designer_key
@@ -15,6 +15,7 @@ module Voom
               @disabled = attribs.delete(:disabled){ [] }
               @readonly = attribs.delete(:readonly){ [] }
               @language = attribs.delete(:language){ 'en' }
+              @open_latest_drawing = attribs.delete(:open_latest_drawing){ true }
               @chart_js_url = attribs.fetch(:chart_js_url, Settings.config.chart_js_url)
               @publish_button_id = attribs.fetch(:publish_button_id){ nil }
               super(type: :geotix_seating_designer, **attribs, &block)
