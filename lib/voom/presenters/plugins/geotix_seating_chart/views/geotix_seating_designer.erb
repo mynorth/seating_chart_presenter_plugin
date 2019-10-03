@@ -14,6 +14,11 @@
     <% if comp.publish_button_id %>
     onChartUpdated: function(chartKey) {
       document.querySelector('#<%= comp.publish_button_id %>').classList.remove('v-hidden');
+    },
+    <% end %>
+    <% if comp.chart_key_input_id %>
+    onChartCreated: function(chartKey) {
+      document.querySelector('#<%= comp.chart_key_input_id %>').value = chartKey;
     }
     <% end %>
   }).render();
