@@ -2,7 +2,7 @@
 <script src="<%= comp.chart_js_url %>"></script>
 <script>
   var chart = new seatsio.SeatingChart({
-    divId: 'chart',
+    divId: 'chart-<%= comp.id %>',
     publicKey: '<%= comp.public_key %>',
     event: '<%= comp.event_id  %>',
     pricing: <%= comp.pricing.to_json %>,
