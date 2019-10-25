@@ -1,3 +1,4 @@
+require_relative 'geotix_seating_chart/components/base'
 require_relative 'geotix_seating_chart/components/chart'
 require_relative 'geotix_seating_chart/components/designer'
 require_relative 'geotix_seating_chart/components/event_manager'
@@ -34,6 +35,11 @@ module Voom
 
         module WebClientComponents
           VIEW_DIR = File.join(__dir__, 'geotix_seating_chart/views')
+
+          def render_header_geotix_seating_chart(_pom, render:)
+            view_dir = File.join(__dir__, 'geotix_seating_chart/views')
+            render.call :erb, :header, views: view_dir
+          end
 
           def render_geotix_seating_chart(comp,
                                    render:,

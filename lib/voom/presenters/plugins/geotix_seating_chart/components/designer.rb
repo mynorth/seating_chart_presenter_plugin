@@ -1,11 +1,9 @@
-require 'voom/presenters/dsl/components/event_base'
-
 module Voom
   module Presenters
     module Plugins
       module GeotixSeatingChart
         module Components
-          class Designer < DSL::Components::EventBase
+          class Designer < Base
             attr_reader :subaccount_id, :designer_key, :chart_key, :disabled, :readonly,
                         :language, :chart_js_url, :open_latest_drawing, :show_on_update,
                         :hide_on_update, :chart_key_input_id
@@ -21,9 +19,13 @@ module Voom
               @show_on_update = attribs.fetch(:show_on_update){ nil }
               @hide_on_update = attribs.fetch(:hide_on_update){ nil }
               @chart_key_input_id = attribs.delete(:chart_key_input_id){ nil }
+              @component_options = %i(subaccount_id designer_key chart_key disabled readonly
+                                  language chart_js_url open_latest_drawing show_on_update
+                                  hide_on_update chart_key_input_id)
               super(type: :geotix_seating_designer, **attribs, &block)
               expand!
             end
+
           end
         end
       end

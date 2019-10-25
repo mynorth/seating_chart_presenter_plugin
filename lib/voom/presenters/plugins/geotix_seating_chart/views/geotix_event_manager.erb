@@ -1,10 +1,5 @@
-<div id="event-manager-<%= comp.mode %>" style="height: 100%"></div>
-<script src="<%= comp.chart_js_url %>"></script>
-<script>
-  var eventManager = new seatsio.EventManager({
-    divId: 'event-manager-<%= comp.mode %>',
-    secretKey: '<%= comp.secret_key %>',
-    event: '<%= comp.event_id %>',
-    mode: '<%= comp.mode %>'
-  }).render();
-</script>
+<div id="event-manager-<%= comp.mode %>"
+     class="v-plugin v-event_manager"
+     style="height: 100%"
+     data-plugin-callback='GeotixEventManager'
+     data-manager-options='<%= h expand_hash(comp.chart_options).to_json%>'></div>

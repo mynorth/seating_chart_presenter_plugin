@@ -1,16 +1,5 @@
-<div id="chart" style="height: 100%"></div>
-<script src="<%= comp.chart_js_url %>"></script>
-<script>
-  var chart = new seatsio.SeatingChart({
-    divId: 'chart-<%= comp.id %>',
-    publicKey: '<%= comp.public_key %>',
-    event: '<%= comp.event_id  %>',
-    pricing: <%= comp.pricing.to_json %>,
-    availableCategories: <%= comp.available_categories %>,
-    priceFormatter: function(price) {
-      return '<%= comp.price_format %>' + price;
-    },
-    priceLevelsTooltipMessage: "<%= comp.price_level_tooltip %>"
-  }).render();
-
-</script>
+<div id="seating-chart-<%= comp.id %>"
+     class="v-plugin v-seating_chart"
+     style="height: 100%;"
+     data-plugin-callback='GeotixSeatingChart'
+     data-seating-options='<%= h expand_hash(comp.chart_options).to_json%>'></div>

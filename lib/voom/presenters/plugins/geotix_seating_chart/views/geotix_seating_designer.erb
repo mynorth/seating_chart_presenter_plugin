@@ -1,26 +1,5 @@
-<div id="chart-designer-<%= comp.id %>" style="height: 100%"></div>
-<script src="<%= comp.chart_js_url %>"></script>
-<script>
-  new seatsio.SeatingChartDesigner({
-    divId: 'chart-designer-<%= comp.id %>',
-    designerKey: '<%= comp.designer_key %>',
-    chartKey: '<%= comp.chart_key %>',
-    language: '<%= comp.language %>',
-    openLatestDrawing: '<%= comp.open_latest_drawing %>',
-    features: {
-      disabled: <%= comp.disabled %>,
-      readOnly: <%= comp.readonly %>
-    },
-    <% if comp.show_on_update || comp.hide_on_update %>
-    onChartUpdated: function(chartKey) {
-      <% if comp.show_on_update %>document.querySelector('#<%= comp.show_on_update %>').classList.remove('v-hidden');<% end %>
-      <% if comp.hide_on_update %>document.querySelector('#<%= comp.hide_on_update %>').classList.add('v-hidden');<% end %>
-    },
-    <% end %>
-    <% if comp.chart_key_input_id %>
-    onChartCreated: function(chartKey) {
-      document.querySelector('#<%= comp.chart_key_input_id %>').value = chartKey;
-    }
-    <% end %>
-  }).render();
-</script>
+<div id="seating-designer-<%= comp.id %>"
+     class="v-plugin v-seating_designer"
+     style="height: 100%;"
+     data-plugin-callback='GeotixSeatingDesigner'
+     data-designer-options='<%= h expand_hash(comp.chart_options).to_json%>'></div>
