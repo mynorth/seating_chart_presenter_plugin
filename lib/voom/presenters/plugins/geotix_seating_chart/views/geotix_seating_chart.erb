@@ -1,0 +1,5 @@
+<div id="seating-chart-<%= comp.id %>"
+     class="v-plugin v-seating_chart"
+     style="height: 100%;"
+     data-plugin-callback='GeotixSeatingChart'
+     data-seating-options='<%= h expand_hash(comp.chart_options).to_json%>'></div>

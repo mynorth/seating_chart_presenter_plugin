@@ -1,0 +1,1 @@
+require_relative 'voom/presenters/plugins/geotix_seating_chart'
