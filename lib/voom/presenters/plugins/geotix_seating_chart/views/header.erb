@@ -1,4 +1,4 @@
-<script src="<%= Settings.config.chart_js_url %>"></script>
+<script src="<%= ::Voom::Presenters::Plugins::GeotixSeatingChart::Settings.config.chart_js_url %>"></script>
 <script>
   <%= File.read(File.expand_path('geotix_seating_chart.js', __dir__)  ) %>
 </script>
