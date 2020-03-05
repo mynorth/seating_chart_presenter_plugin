@@ -72,6 +72,12 @@ module Voom
           end
 
         end
+
+        # module WebClientActions
+        #   def action_data_post(action, _parent_id, *)
+        #     [action.type, action.url, action.options.to_h, action.attributes.to_h]
+        #   end
+        # end
       end
     end
   end
