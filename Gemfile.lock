@@ -7,14 +7,12 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
-    concurrent-ruby (1.1.6)
-    dry-configurable (0.11.3)
+    concurrent-ruby (1.1.8)
+    dry-configurable (0.12.1)
       concurrent-ruby (~> 1.0)
-      dry-core (~> 0.4, >= 0.4.7)
-      dry-equalizer (~> 0.2)
-    dry-core (0.4.9)
+      dry-core (~> 0.5, >= 0.5.0)
+    dry-core (0.5.0)
       concurrent-ruby (~> 1.0)
-    dry-equalizer (0.3.0)
     rake (13.0.1)
 
 PLATFORMS
